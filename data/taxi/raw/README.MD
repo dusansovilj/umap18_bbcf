@@ -1,0 +1,1 @@
+Download the (train.csv) data from ECML/PKDD 15: Taxi Trajectory Prediction challenge hosted at https://www.kaggle.com/c/pkdd-15-predict-taxi-service-trajectory-i and copy it here.
