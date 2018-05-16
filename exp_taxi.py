@@ -4,7 +4,7 @@ Taxi data experiments.
 
 from datasets.taxi import TaxiData
 
-from run_experiment import run_single_experiment
+from helpers.run_experiment import run_single_experiment
 
 from algs.markov import MethodMarkov
 from algs.bbcf import MethodBBCF

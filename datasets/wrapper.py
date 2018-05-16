@@ -4,8 +4,9 @@ Base abstract class for dataset object.
 
 import os
 import cPickle as pickle
-from helpers import ensure_directory
+# from helpers.aux import ensure_directory
 from datasets import DATA_DIR
+from helpers.aux import *
 
 
 class Dataset(object):

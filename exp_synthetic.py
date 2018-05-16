@@ -5,7 +5,7 @@ Synthetic data experiments
 
 from datasets.synthetic import SyntheticData
 
-from run_experiment import run_single_experiment
+from helpers.run_experiment import run_single_experiment
 from algs.markov import MethodMarkov
 from algs.bbcf import MethodBBCF
 from algs.nearestneigh import MethodNN

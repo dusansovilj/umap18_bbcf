@@ -2,8 +2,9 @@
 '''
 
 import matplotlib.pyplot as plt
-from helpers import *
-from run_experiment import FIGURES_DIR, comp_mean_ci, read_result
+import numpy as np
+from helpers.aux import *
+from helpers.run_experiment import FIGURES_DIR, comp_mean_ci, read_result
 from exp_synthetic import *
 
 

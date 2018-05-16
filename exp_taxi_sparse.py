@@ -2,7 +2,7 @@
 Experiments on Taxi data for variable number of samples.
 '''
 
-from run_experiment import run_single_experiment
+from helpers.run_experiment import run_single_experiment
 from datasets.taxisparse import SparseTaxiData
 
 from algs.markov import MethodMarkov

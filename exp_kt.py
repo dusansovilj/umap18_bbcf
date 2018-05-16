@@ -5,7 +5,7 @@ Experiments on Knowledge-Tracing data for nearest-neighbor and neural network.
 
 from datasets.kt import KTData
 
-from run_experiment import run_single_experiment
+from helpers.run_experiment import run_single_experiment
 from algs.nearestneigh import MethodNN
 from algs.lstm import MethodLSTM
 

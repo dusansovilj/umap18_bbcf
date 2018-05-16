@@ -2,12 +2,12 @@
 '''
 
 
-import os, time, pickle, sys
+import os, pickle
 import numpy as np
 
-from scripts import PACKAGE_DIR
+from helpers import PACKAGE_DIR
 from datasets.utils import at_least_trajectories
-from helpers import comp_95confint, ensure_directory
+from helpers.aux import comp_95confint, ensure_directory
 
 
 RESULTS_DIR = os.path.join(PACKAGE_DIR, 'results')
@@ -95,7 +95,7 @@ def run_single_experiment(method,
             model.validate(p_data)                    # validate 
             model.train(p_data)                       # train
             
-            hr_all, hr_len = model.compute_hr(        # no need to preprocess data here
+            hr_all, hr_len = model.compute_hitrate(   # no need to preprocess data here
                 test_fold, 
                 hitratelvl, 
                 fixed_len)  

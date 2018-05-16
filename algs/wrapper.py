@@ -56,7 +56,6 @@ class Method(object):
     def next_state(self, sequence, pos):
         '''
         Define the next state in the sequence.
-        This is only modified in kNN method. 
         ''' 
         assert pos >= 0 and pos < len(sequence)
         
@@ -66,7 +65,7 @@ class Method(object):
             return sequence[pos+1]
     
     
-    def compute_hr(self, test_data, hrk, lengths, **kwargs):
+    def compute_hitrate(self, test_data, hrk, lengths, **kwargs):
         '''
         Compute hit rate for test data.
         

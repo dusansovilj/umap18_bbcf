@@ -2,11 +2,12 @@
 '''
 
 import matplotlib.pyplot as plt
-from helpers import *
+import numpy as np
+from helpers.aux import *
 
 from exp_taxi_sparse import *
 
-from run_experiment import read_result, comp_mean_ci, FIGURES_DIR
+from helpers.run_experiment import read_result, comp_mean_ci, FIGURES_DIR
 
 
 NUM_SAMPLES = range(200, 1001, 200) 
