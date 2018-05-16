@@ -15,7 +15,6 @@ from datasets.wrapper import Dataset
 from datasets import DATA_DIR
 
 
-# TAXI_DATA_RAW = './data/taxi/raw/train.csv'
 TAXI_DATA_RAW = os.path.join(DATA_DIR, 'taxi', 'raw', 'train.csv') 
 
 

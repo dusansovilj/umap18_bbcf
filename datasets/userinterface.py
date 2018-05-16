@@ -9,7 +9,6 @@ from datasets.wrapper import Dataset
 from datasets import DATA_DIR
 
 
-# LOG_DIR = './data/ui/raw'
 LOG_DIR = os.path.join(DATA_DIR, 'ui', 'raw')
 
 

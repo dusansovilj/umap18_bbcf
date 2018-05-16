@@ -20,13 +20,6 @@ class Dataset(object):
             self.create_data()
             self.save() 
         
-#         fname = self.get_filename()
-#         if os.path.exists(fname):
-#             self._data = pickle.load(open(fname, 'rb'))
-#         else:
-#             self.create_data()
-#             self.save()
-        
     
     def name(self):
         return self._name
@@ -74,15 +67,5 @@ class Dataset(object):
         fname = self.get_filename()
         self._data = pickle.load(open(fname, 'rb'))
 
-#     def save(self, fname):
-#         fullname = os.path.join(DATA_DIR, 'processed', fname + '.pkl')
-#         ensure_directory(fullname, True)
-#         pickle.dump(self._data, open(fullname, 'wb'))
-#         print('saved')
-#        
-#     def load(self, fname):
-#         fullname = os.path.join(DATA_DIR, 'processed', fname + '.pkl')
-#         self._data = pickle.load(open(fullname, 'rb'))
-#         print('loaded')
         
 

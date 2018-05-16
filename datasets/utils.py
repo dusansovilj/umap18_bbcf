@@ -12,13 +12,6 @@ def get_train_and_test_set(output_data, percent, seed=0):
     Input the data of trajectories and percentage of training data you want, 
     return train and test data at the percentage of (for example) 80% : 20% randomly
     '''
-# #     new_data = np.random.shuffle(output_data)
-#     new_data = output_data
-#     temp = int(len(output_data) * percent)
-#     train_data = new_data[:temp]
-#     test_data = new_data[temp:]
-#     return train_data, test_data
-
     train_data, test_data = train_test_split(output_data, train_size=int(len(output_data) * percent), random_state=seed)
     return train_data, test_data
 

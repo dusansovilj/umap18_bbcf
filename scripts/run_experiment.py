@@ -5,11 +5,11 @@
 import os, time, pickle, sys
 import numpy as np
 
+from scripts import PACKAGE_DIR
 from datasets.utils import at_least_trajectories
-from helpers import comp_95confint, ensure_directory, parent_dir
+from helpers import comp_95confint, ensure_directory
 
 
-PACKAGE_DIR = parent_dir(parent_dir(os.path.abspath(__file__)))
 RESULTS_DIR = os.path.join(PACKAGE_DIR, 'results')
 FIGURES_DIR = os.path.join(PACKAGE_DIR, 'figures')
 
