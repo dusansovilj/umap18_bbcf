@@ -4,7 +4,7 @@ Code for experiments done in Collaborative Filtering with Behavioral Models publ
 
 ## Getting Started
 
-Download data sets first, and the scripts directory contains all python files for running experiments. 
+Download data sets first, and then run scripts in root directory. exp*.py files are for running experiments and fig*.py are for plotting. Results are saved in ```results``` folder and figures are saved in ```figures``` folder. 
 
 ## Requirements
 
