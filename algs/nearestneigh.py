@@ -11,7 +11,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
 
 from datasets.utils import convert_to_action_sequence, convert_to_pairwise_sequence
-from algs.utils import get_thread_count
+from helpers.aux import get_thread_count
 
 
 

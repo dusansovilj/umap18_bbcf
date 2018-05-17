@@ -3,7 +3,9 @@ Markov model main module
 '''
 
 import numpy as np
-from algs.utils import get_adjacent_state_matrix, get_next_state_probability
+from math import log
+from algs.utils import get_adjacent_state_matrix, get_next_state_probability,\
+    get_start_state_distribution
 
 from wrapper import Method
 
@@ -15,19 +17,52 @@ class MethodMarkov(Method):
         self._rf = reg_factor
         
     def train(self, data):
-        if not isinstance(data, list):
-            raise TypeError
-        
         adjacent_state_mat = get_adjacent_state_matrix(
             range(self._num_states), 
             self._adjacency_list)
         
-        self._T = compute_transition_matrix(data, self._num_states, adjacent_state_mat, self._rf)
+        self._T = compute_transition_matrix(
+            data, 
+            self._num_states, 
+            adjacent_state_mat, 
+            self._rf)
+        
+        self._init_distribution = np.zeros((self._num_states,), dtype='float32') + self._rf
+        for sample in data:
+            self._init_distribution[sample[0]] += 1. 
+        self._init_distribution /= len(data)
             
             
     def predict(self, sequence, *args):
+        assert len(sequence[0]) > 1
         return get_next_state_probability(self._T, sequence[0][-2]), None  # last element of the sequence is the target
     
+    
+    def loglike(self, sequence, *args):
+        '''
+        Compute log-likelihood of a sequence under this model. 
+        If additional argument is given, the function 
+        interprets it as log-likelihood computed from the same
+        sequence but with last state removed, that is, 
+        loglike(sequence[:-1]). 
+        '''
+        
+        assert len(sequence) > 0
+        
+        if args[0] is None:
+            loglike = log(self._init_distribution[sequence[0]])
+            for s in range(1, len(sequence)):
+                ap = self._T[sequence[s-1]]
+                pr = ap[sequence[s]]
+                loglike += log(pr) if pr > 0 else log(self._rf)
+        else:
+            loglike = args[0]
+            ap = self._T[sequence[-2]]
+            pr = ap[sequence[-1]]
+            loglike += log(pr) if pr > 0 else log(self._rf)
+            
+        return loglike 
+        
     
     def name(self):
         return 'markov'

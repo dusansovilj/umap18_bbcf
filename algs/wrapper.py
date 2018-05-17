@@ -8,7 +8,6 @@ import numpy as np
 class Method(object):
     
     def __init__(self, num_states, adjacency_list):
-#         self._name = name
         self._num_states = num_states
         self._adjacency_list = adjacency_list
         
@@ -51,6 +50,10 @@ class Method(object):
     
     def prepare_data(self, data):
         return data
+    
+    
+    def loglike(self, sequence):
+        raise NotImplementedError
     
     
     def next_state(self, sequence, pos):

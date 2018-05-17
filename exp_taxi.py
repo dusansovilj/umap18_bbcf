@@ -29,17 +29,17 @@ show_result = True
 
 
 def main():
-    run_single_experiment(
-        MethodMarkov, 
-        {'reg_factor': REGULARIZATION_FACTOR}, 
-        TaxiData, 
-        {'num_samples': TRAIN_SIZE, 'grid': GRID_SIZE},
-        2, 
-        FIXED_LENGTHS,
-        10,
-        fsuffix,
-        RND_SEED,
-        show_result)
+#     run_single_experiment(
+#         MethodMarkov, 
+#         {'reg_factor': REGULARIZATION_FACTOR}, 
+#         TaxiData, 
+#         {'num_samples': TRAIN_SIZE, 'grid': GRID_SIZE},
+#         2, 
+#         FIXED_LENGTHS,
+#         10,
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
      
      
     run_single_experiment(
@@ -55,43 +55,43 @@ def main():
         show_result)
       
       
-    run_single_experiment(
-        MethodNN, 
-        {'distfcn': 'euclidean', 'stride': 5},
-        TaxiData, 
-        {'num_samples': TRAIN_SIZE, 'grid': GRID_SIZE},
-        2, 
-        FIXED_LENGTHS, 
-        10, 
-        fsuffix,
-        RND_SEED,
-        show_result)
-      
-       
-    run_single_experiment(
-        MethodNN, 
-        {'distfcn': 'cosine', 'stride': 5},
-        TaxiData, 
-        {'num_samples': TRAIN_SIZE, 'grid': GRID_SIZE},
-        2, 
-        FIXED_LENGTHS, 
-        10, 
-        fsuffix,
-        RND_SEED,
-        show_result)
-      
-      
-    run_single_experiment(
-        MethodLSTM, 
-        {'max_seq_len': 10, 'strat': 'sequential', 'epochs': 20, 'fname': 'lstm_model'}, 
-        TaxiData, 
-        {'num_samples': TRAIN_SIZE, 'grid': GRID_SIZE},
-        2, 
-        FIXED_LENGTHS, 
-        10, 
-        fsuffix,
-        RND_SEED,
-        show_result)
+#     run_single_experiment(
+#         MethodNN, 
+#         {'distfcn': 'euclidean', 'stride': 5},
+#         TaxiData, 
+#         {'num_samples': TRAIN_SIZE, 'grid': GRID_SIZE},
+#         2, 
+#         FIXED_LENGTHS, 
+#         10, 
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
+#       
+#        
+#     run_single_experiment(
+#         MethodNN, 
+#         {'distfcn': 'cosine', 'stride': 5},
+#         TaxiData, 
+#         {'num_samples': TRAIN_SIZE, 'grid': GRID_SIZE},
+#         2, 
+#         FIXED_LENGTHS, 
+#         10, 
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
+#       
+#       
+#     run_single_experiment(
+#         MethodLSTM, 
+#         {'max_seq_len': 10, 'strat': 'sequential', 'epochs': 20, 'fname': 'lstm_model'}, 
+#         TaxiData, 
+#         {'num_samples': TRAIN_SIZE, 'grid': GRID_SIZE},
+#         2, 
+#         FIXED_LENGTHS, 
+#         10, 
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
 
 
 if __name__ == '__main__':

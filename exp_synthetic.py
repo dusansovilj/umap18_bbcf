@@ -7,7 +7,7 @@ from datasets.synthetic import SyntheticData
 
 from helpers.run_experiment import run_single_experiment
 from algs.markov import MethodMarkov
-from algs.bbcf import MethodBBCF
+from algs.bbcf_modular import MethodBBCF
 from algs.nearestneigh import MethodNN
 from algs.lstm import MethodLSTM
 
@@ -26,17 +26,17 @@ show_result = True
 
 
 def main():
-    run_single_experiment(
-        MethodMarkov, 
-        {'reg_factor': REGULARIZATION_FACTOR}, 
-        SyntheticData, 
-        {'num_samples': NUM_TRAINING_SAMPLES, 'seplvl': TASK_SEP, 'seed': RND_SEED},
-        2, 
-        FIXED_LENGTHS,
-        NUM_FOLDS,
-        fsuffix,
-        RND_SEED,
-        show_result)
+#     run_single_experiment(
+#         MethodMarkov, 
+#         {'reg_factor': REGULARIZATION_FACTOR}, 
+#         SyntheticData, 
+#         {'num_samples': NUM_TRAINING_SAMPLES, 'seplvl': TASK_SEP, 'seed': RND_SEED},
+#         2, 
+#         FIXED_LENGTHS,
+#         NUM_FOLDS,
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
 
 
     run_single_experiment(
@@ -50,45 +50,45 @@ def main():
         fsuffix,
         RND_SEED,
         show_result)
-      
        
-    run_single_experiment(
-        MethodNN, 
-        {'distfcn': 'euclidean', 'stride': 3},
-        SyntheticData, 
-        {'num_samples': NUM_TRAINING_SAMPLES, 'seplvl': TASK_SEP, 'seed': RND_SEED}, 
-        2, 
-        FIXED_LENGTHS, 
-        NUM_FOLDS, 
-        fsuffix,
-        RND_SEED,
-        show_result)
-         
-          
-    run_single_experiment(
-        MethodNN, 
-        {'distfcn': 'cosine', 'stride': 3},
-        SyntheticData, 
-        {'num_samples': NUM_TRAINING_SAMPLES, 'seplvl': TASK_SEP, 'seed': RND_SEED},
-        2, 
-        FIXED_LENGTHS, 
-        NUM_FOLDS, 
-        fsuffix,
-        RND_SEED,
-        show_result)
-         
-         
-    run_single_experiment(
-        MethodLSTM, 
-        {'max_seq_len': 20, 'strat': 'sequential', 'epochs': 20, 'fname': 'lstm_model'}, 
-        SyntheticData, 
-        {'num_samples': NUM_TRAINING_SAMPLES, 'seplvl': TASK_SEP, 'seed': RND_SEED},
-        2, 
-        FIXED_LENGTHS, 
-        NUM_FOLDS, 
-        fsuffix,
-        RND_SEED,
-        show_result)
+        
+#     run_single_experiment(
+#         MethodNN, 
+#         {'distfcn': 'euclidean', 'stride': 3},
+#         SyntheticData, 
+#         {'num_samples': NUM_TRAINING_SAMPLES, 'seplvl': TASK_SEP, 'seed': RND_SEED}, 
+#         2, 
+#         FIXED_LENGTHS, 
+#         NUM_FOLDS, 
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
+#          
+#           
+#     run_single_experiment(
+#         MethodNN, 
+#         {'distfcn': 'cosine', 'stride': 3},
+#         SyntheticData, 
+#         {'num_samples': NUM_TRAINING_SAMPLES, 'seplvl': TASK_SEP, 'seed': RND_SEED},
+#         2, 
+#         FIXED_LENGTHS, 
+#         NUM_FOLDS, 
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
+#          
+#          
+#     run_single_experiment(
+#         MethodLSTM, 
+#         {'max_seq_len': 20, 'strat': 'sequential', 'epochs': 20, 'fname': 'lstm_model'}, 
+#         SyntheticData, 
+#         {'num_samples': NUM_TRAINING_SAMPLES, 'seplvl': TASK_SEP, 'seed': RND_SEED},
+#         2, 
+#         FIXED_LENGTHS, 
+#         NUM_FOLDS, 
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
 
 
 

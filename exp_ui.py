@@ -6,7 +6,7 @@ from datasets.userinterface import UIData
 from helpers.run_experiment import run_single_experiment 
 
 from algs.markov import MethodMarkov
-from algs.bbcf import MethodBBCF
+from algs.bbcf_modular import MethodBBCF
 from algs.nearestneigh import MethodNN
 from algs.lstm import MethodLSTM
 
@@ -51,43 +51,43 @@ def main():
         show_result)
     
      
-    run_single_experiment(
-        MethodNN, 
-        {'distfcn': 'euclidean', 'stride': 1},
-        UIData, 
-        {'num_test': NUM_TEST_SAMPLES},
-        2, 
-        FIXED_LENGTHS, 
-        10, 
-        fsuffix,
-        RND_SEED,
-        show_result)
-     
-      
-    run_single_experiment(
-        MethodNN, 
-        {'distfcn': 'euclidean', 'stride': 1},
-        UIData, 
-        {'num_test': NUM_TEST_SAMPLES},
-        2, 
-        FIXED_LENGTHS, 
-        10, 
-        fsuffix,
-        RND_SEED,
-        show_result)
-     
-     
-    run_single_experiment(
-        MethodLSTM, 
-        {'max_seq_len': 30, 'strat': 'sequential', 'epochs': 20, 'fname': 'lstm_model'}, 
-        UIData, 
-        {'num_test': NUM_TEST_SAMPLES},
-        2, 
-        FIXED_LENGTHS, 
-        10, 
-        fsuffix,
-        RND_SEED,
-        show_result)
+#     run_single_experiment(
+#         MethodNN, 
+#         {'distfcn': 'euclidean', 'stride': 1},
+#         UIData, 
+#         {'num_test': NUM_TEST_SAMPLES},
+#         2, 
+#         FIXED_LENGTHS, 
+#         10, 
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
+#      
+#       
+#     run_single_experiment(
+#         MethodNN, 
+#         {'distfcn': 'euclidean', 'stride': 1},
+#         UIData, 
+#         {'num_test': NUM_TEST_SAMPLES},
+#         2, 
+#         FIXED_LENGTHS, 
+#         10, 
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
+#      
+#      
+#     run_single_experiment(
+#         MethodLSTM, 
+#         {'max_seq_len': 30, 'strat': 'sequential', 'epochs': 20, 'fname': 'lstm_model'}, 
+#         UIData, 
+#         {'num_test': NUM_TEST_SAMPLES},
+#         2, 
+#         FIXED_LENGTHS, 
+#         10, 
+#         fsuffix,
+#         RND_SEED,
+#         show_result)
 
 
 if __name__ == '__main__':
