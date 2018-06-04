@@ -103,9 +103,6 @@ class Method(object):
 
                 true_label = self.next_state(test_data[i], j)   # get next state -- prediction target
                 
-#                 prepared_data = self.prepare_data([prior_trajectory])
-#                 prediction = self.predict(prepared_data)
-
                 prepared_data          = self.prepare_data([prior_trajectory + [true_label]])  # add the target value
                 prediction, other_args = self.predict(prepared_data, other_args)
                 prediction_sorted      = np.argsort(prediction)

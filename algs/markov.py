@@ -4,10 +4,8 @@ Markov model main module
 
 import numpy as np
 from math import log
-from algs.utils import get_adjacent_state_matrix, get_next_state_probability,\
-    get_start_state_distribution
-
 from wrapper import Method
+from algs.utils import get_adjacent_state_matrix, get_next_state_probability
 
 
 class MethodMarkov(Method):

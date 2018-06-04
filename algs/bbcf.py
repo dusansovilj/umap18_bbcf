@@ -36,7 +36,6 @@ class MethodBBCF(Method):
         
         # modify the model initialization to accommodate 
         # different learning algorithms
-        # initialize models
         for goal in self._goal_state_label:
             temp_model = MethodMarkov(
                 self._num_states, 
@@ -52,8 +51,6 @@ class MethodBBCF(Method):
         
     
     def predict(self, sequence, *args):
-#         res, _, _ = self.P_a_c(sequence[0][:-1])
-#         return res
         res, loglikes = self.P_a_c(sequence[0][:-1], args[0])  # expect log-likelihoods here
         return res, loglikes
         
