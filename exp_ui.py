@@ -66,7 +66,7 @@ def main():
        
     run_single_experiment(
         MethodNN, 
-        {'distfcn': 'euclidean', 'stride': 1},
+        {'distfcn': 'cosine', 'stride': 1},
         UIData, 
         {'num_test': NUM_TEST_SAMPLES},
         2, 
